@@ -1,0 +1,59 @@
+var GALLERY_DATA = {
+  "alfa": [
+    "photos/alfa/alfa_01_03.jpg",
+    "photos/alfa/alfa_02_03.jpg",
+    "photos/alfa/alfa_03_03.jpg",
+    "photos/alfa/alfa_04_03.jpg",
+    "photos/alfa/alfa_05_03.jpg",
+    "photos/alfa/alfa_06_03.jpg",
+    "photos/alfa/alfa_07_03.jpg",
+    "photos/alfa/alfa_08_03.jpg",
+    "photos/alfa/alfa_09_03.jpg",
+    "photos/alfa/alfa_10_03.jpg"
+  ],
+  "hummer": [
+    "photos/hummer/hummer_01.jpg",
+    "photos/hummer/hummer_02.jpg",
+    "photos/hummer/hummer_03.jpg",
+    "photos/hummer/hummer_04.jpg",
+    "photos/hummer/hummer_05.jpg",
+    "photos/hummer/hummer_06.jpg",
+    "photos/hummer/hummer_07.jpg",
+    "photos/hummer/hummer_08.jpg",
+    "photos/hummer/hummer_09.jpg",
+    "photos/hummer/hummer_10.jpg",
+    "photos/hummer/hummer_11.jpg",
+    "photos/hummer/hummer_12.jpg",
+    "photos/hummer/hummer_13.jpg",
+    "photos/hummer/hummer_14.jpg",
+    "photos/hummer/hummer_15.jpg"
+  ],
+  "tesla": [
+    "photos/tesla/tesla_01.jpg",
+    "photos/tesla/tesla_02.jpg",
+    "photos/tesla/tesla_03.jpg",
+    "photos/tesla/tesla_04.jpg",
+    "photos/tesla/tesla_05.jpg",
+    "photos/tesla/tesla_06.jpg",
+    "photos/tesla/tesla_07.jpg",
+    "photos/tesla/tesla_08.jpg",
+    "photos/tesla/tesla_09.jpg",
+    "photos/tesla/tesla_10.jpg",
+    "photos/tesla/tesla_11.jpg",
+    "photos/tesla/tesla_12.jpg"
+  ],
+  "volvo": [
+    "photos/volvo/volvo_01.jpg",
+    "photos/volvo/volvo_02.jpg",
+    "photos/volvo/volvo_03.jpg",
+    "photos/volvo/volvo_04.jpg",
+    "photos/volvo/volvo_05.jpg",
+    "photos/volvo/volvo_06.jpg",
+    "photos/volvo/volvo_07.jpg",
+    "photos/volvo/volvo_08.jpg",
+    "photos/volvo/volvo_09.jpg",
+    "photos/volvo/volvo_10.jpg",
+    "photos/volvo/volvo_11.jpg",
+    "photos/volvo/volvo_12.jpg"
+  ]
+};
