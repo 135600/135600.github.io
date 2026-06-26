@@ -33,8 +33,8 @@ var INFO = {
     phone: "+86 135 600 780 21",
     contact_big: "让我们一起<br>做些<em>有意思</em>的<br>事情。",
     contact_big_en: "Let's build<br>something <em>interesting</em><br>together.",
-    hero_photo: "",
-    hero_photo_en: ""
+    hero_photo: "photos/hero.jpeg",
+    hero_photo_en: "photos/hero.jpeg"
 };
 
 // ==================== ABOUT ====================
