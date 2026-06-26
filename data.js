@@ -3,18 +3,18 @@
 var INFO = {
     name: "陈文亮",
     name_en: "Wenliang Chen",
-    hero_title: "设计师，也是投资者",
-    hero_title_en: "Designer & Investor",
-    tagline: "广州美术学院 · 汽车设计方向。用东方美学做设计，用结构性思维做投资。",
-    tagline_en: "GAFA · Automotive Design. Eastern aesthetics in design, structural thinking in investment.",
+    hero_title: "设计师，也是运动者",
+    hero_title_en: "Designer & Athlete",
+    tagline: "广州美术学院 · 汽车设计方向。用东方美学做设计，用运动塑造身心。",
+    tagline_en: "GAFA · Automotive Design. Eastern aesthetics in design, fitness in life.",
     meta_line1: "基于",
     meta_line1_en: "Based in ",
     meta_city: "广州",
     meta_city_en: "Guangzhou",
     meta_line2: "专注于",
     meta_line2_en: "Focus on ",
-    meta_focus: "汽车设计 × 投资",
-    meta_focus_en: "Auto Design × Investment",
+    meta_focus: "汽车设计 × 健身",
+    meta_focus_en: "Auto Design × Fitness",
     meta_line3: "可用",
     meta_line3_en: "Available for ",
     meta_avail: "合作与邀约",
@@ -27,8 +27,8 @@ var INFO = {
     design_lang_en: "Eastern Mood, Structural Narrative",
     design_lang_sub: "将文化意象转化为可感知的形态语言",
     design_lang_sub_en: "Transforming cultural imagery into perceivable form language",
-    invest_label: "A 股 · 偏进攻型 · 结构性赛道",
-    invest_label_en: "A-Shares · Aggressive · Structural Tracks",
+    fitness_label: "器械训练 · 有氧运动 · 体能提升",
+    fitness_label_en: "Strength · Cardio · Conditioning",
     email: "3323798056@qq.com",
     phone: "+86 135 600 780 21",
     contact_big: "让我们一起<br>做些<em>有意思</em>的<br>事情。",
@@ -43,8 +43,8 @@ var ABOUT = {
     p1_en: "I'm Wenliang Chen, an automotive design student at GAFA. I believe great design goes beyond the unity of function and form — it should carry cultural memory, trigger emotional resonance, and leave an 'impression' in the viewer's mind.",
     p2: "我的设计实践围绕东方美学展开：从丝绸文化到邮轮造型，从情感化汽车设计到概念 SUV，我尝试将传统文化意象转化为当代设计语言。每一个项目都是一次叙事——关于过去与未来的对话。",
     p2_en: "My design practice revolves around Eastern aesthetics: from silk culture to cruise form, from emotional automotive design to concept SUVs. I transform traditional cultural imagery into contemporary design language. Every project is a narrative — a dialogue between past and future.",
-    p3: "与此同时，我也是一个活跃的个人投资者。设计中的比例感与结构思维，同样适用于对市场的判断。两者看似无关，实则共享同一种底层逻辑——对趋势的敏感，对结构的理解，对「美」与「价值」的直觉。",
-    p3_en: "Meanwhile, I'm also an active individual investor. The sense of proportion and structural thinking from design applies equally to market judgment. The two may seem unrelated, but share the same underlying logic — sensitivity to trends, understanding of structure, and intuition for 'beauty' and 'value'."
+    p3: "与此同时，我也热爱健身。设计中的比例感与结构思维，同样适用于对身体的雕刻。两者看似无关，实则共享同一种底层逻辑——对细节的敏感，对结构的理解，对「美」与「健康」的追求。",
+    p3_en: "Meanwhile, I'm also passionate about fitness. The sense of proportion and structural thinking from design applies equally to sculpting the body. The two may seem unrelated, but share the same underlying logic — sensitivity to detail, understanding of structure, and pursuit of 'beauty' and 'health'."
 };
 
 // ==================== WORKS ====================
@@ -192,46 +192,47 @@ var PROJECTS = [
     }
 ];
 
-// ==================== INVEST ====================
-var INVEST = {
-    p1: "以 A 股和基金为主要标的，采用<strong>偏进攻型</strong>的投资策略。聚焦高成长性结构性赛道，通过产业链研究和技术趋势判断捕捉机会。",
-    p1_en: "Focused on A-shares and funds with an <strong>aggressive</strong> strategy. Targeting high-growth structural tracks through supply chain research and technology trend analysis.",
-    p2: "核心方向覆盖<strong>稀有金属与 AI 算力材料</strong>、<strong>新能源产业链</strong>、以及<strong>半导体存储与先进封装</strong>。相信设计中的比例感与结构思维，同样适用于对投资组合的风险管理。",
-    p2_en: "Core: <strong>rare metals & AI computing materials</strong>, <strong>new energy supply chain</strong>, and <strong>semiconductor storage & advanced packaging</strong>. The proportion and structural thinking from design applies equally to portfolio risk management.",
+// ==================== FITNESS ====================
+var FITNESS = {
+    p1: "以<strong>器械训练</strong>和<strong>有氧运动</strong>为主，兼顾柔韧与体能提升。相信设计中的比例感与结构思维，同样适用于对身体的雕刻。",
+    p1_en: "Focused on <strong>strength training</strong> and <strong>cardio</strong>, balancing flexibility and conditioning. The proportion and structural thinking from design applies equally to sculpting the body.",
+    p2: "训练理念：<strong>循序渐进</strong>，<strong>科学量化</strong>，追求长期主义的身体投资。设计审美与健身追求，共享同一种对「美」的定义。",
+    p2_en: "Philosophy: <strong>progressive overload</strong>, <strong>scientific quantification</strong>, long-term investment in the body. Design aesthetics and fitness share the same definition of 'beauty'.",
+
     tracks: [
         {
-            title: "稀有金属 / AI 算力材料",
-            title_en: "Rare Metals / AI Computing",
-            desc: "锗 · 锡 · 稀土 — 算力基础设施底层资源",
-            desc_en: "Ge · Sn · Rare Earths — Computing infrastructure foundation",
+            title: "器械训练",
+            title_en: "Strength Training",
+            desc: "杠铃 · 哑铃 · 固定器械 — 肌肉力量的系统化雕塑",
+            desc_en: "Barbell · Dumbbell · Machines — Systematic sculpting of muscular strength",
             image: ""
         },
         {
-            title: "半导体 / 存储产业链",
-            title_en: "Semiconductor / Storage Chain",
-            desc: "先进封装 · HBM · 存储芯片",
-            desc_en: "Advanced Packaging · HBM · Memory Chips",
+            title: "有氧运动",
+            title_en: "Cardio",
+            desc: "跑步 · 单车 · 划船机 — 心肺功能的持续强化",
+            desc_en: "Running · Cycling · Rowing — Continuous enhancement of cardiovascular fitness",
             image: ""
         },
         {
-            title: "新能源材料",
-            title_en: " New Energy Materials",
-            desc: "电解液 · 电池材料 — 电动化下半场",
-            desc_en: "Electrolyte · Battery — The second half of electrification",
+            title: "体能训练",
+            title_en: "Conditioning",
+            desc: "HIIT · 功能性训练 — 全面提升身体素质",
+            desc_en: "HIIT · Functional Training — Comprehensive fitness improvement",
             image: ""
         },
         {
-            title: "军工新材料",
-            title_en: "Defense Materials",
-            desc: "国防科技 · 先进材料",
-            desc_en: "Defense Tech · Advanced Materials",
+            title: "柔韧与恢复",
+            title_en: "Flexibility & Recovery",
+            desc: "拉伸 · 筋膜放松 — 运动表现的保障",
+            desc_en: "Stretching · Foam Rolling — Essential for performance",
             image: ""
         },
         {
-            title: "投资风格",
-            title_en: "Investment Style",
-            desc: "偏进攻型 · 高波动高回报 · 严格止盈止损",
-            desc_en: "Aggressive · High Volatility · Strict Stop-loss",
+            title: "训练风格",
+            title_en: "Training Style",
+            desc: "渐进超负荷 · 科学量化 · 长期主义",
+            desc_en: "Progressive Overload · Scientific · Long-term",
             image: ""
         }
     ]

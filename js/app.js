@@ -2,13 +2,13 @@
 const T = {
     nav_about: { zh:'关于', en:'About', ja:'About', ko:'About', ar:'About', de:'About', fr:'About' },
     nav_works: { zh:'作品', en:'Works', ja:'Works', ko:'Works', ar:'Works', de:'Works', fr:'Works' },
-    nav_invest: { zh:'投资', en:'Invest', ja:'Invest', ko:'Invest', ar:'Invest', de:'Invest', fr:'Invest' },
+    nav_fitness: { zh:'健身', en:'Fitness', ja:'Fitness', ko:'Fitness', ar:'Fitness', de:'Fitness', fr:'Fitness' },
     nav_contact: { zh:'联系', en:'Contact', ja:'Contact', ko:'Contact', ar:'Contact', de:'Contact', fr:'Contact' },
     hero_scroll: { zh:'下滑', en:'Scroll', ja:'Scroll', ko:'Scroll', ar:'Scroll', de:'Scroll', fr:'Scroll' },
     about_title: { zh:'关于<em>我</em>', en:'About <em>Me</em>', ja:'About <em>Me</em>', ko:'About <em>Me</em>', ar:'About <em>Me</em>', de:'About <em>Me</em>', fr:'About <em>Me</em>' },
     works_title: { zh:'作品<em>集</em>', en:'Selected <em>Works</em>', ja:'Selected <em>Works</em>', ko:'Selected <em>Works</em>', ar:'Selected <em>Works</em>', de:'Selected <em>Works</em>', fr:'Selected <em>Works</em>' },
     proj_title: { zh:'项目<em>经历</em>', en:'Project <em>Experience</em>', ja:'Project <em>Experience</em>', ko:'Project <em>Experience</em>', ar:'Project <em>Experience</em>', de:'Project <em>Experience</em>', fr:'Project <em>Experience</em>' },
-    invest_title: { zh:'投资<em>方向</em>', en:'Investment <em>Focus</em>', ja:'Investment <em>Focus</em>', ko:'Investment <em>Focus</em>', ar:'Investment <em>Focus</em>', de:'Investment <em>Focus</em>', fr:'Investment <em>Focus</em>' },
+    fitness_title: { zh:'健身<em>生活</em>', en:'Fitness <em>Lifestyle</em>', ja:'Fitness <em>Lifestyle</em>', ko:'Fitness <em>Lifestyle</em>', ar:'Fitness <em>Lifestyle</em>', de:'Fitness <em>Lifestyle</em>', fr:'Fitness <em>Lifestyle</em>' },
     w6_tag: { zh:'更多作品', en:'More Works', ja:'More Works', ko:'More Works', ar:'More Works', de:'More Works', fr:'More Works' },
     w6_title: { zh:'即将呈现', en:'Coming Soon', ja:'Coming Soon', ko:'Coming Soon', ar:'Coming Soon', de:'Coming Soon', fr:'Coming Soon' },
     w6_desc: { zh:'持续创作中...', en:'Creating...', ja:'Creating...', ko:'Creating...', ar:'Creating...', de:'Creating...', fr:'Creating...' },
@@ -20,7 +20,7 @@ const T = {
     side_edu_label: { zh:'Education', en:'Education', ja:'Education', ko:'Education', ar:'Education', de:'Education', fr:'Education' },
     side_focus_label: { zh:'Focus', en:'Focus', ja:'Focus', ko:'Focus', ar:'Focus', de:'Focus', fr:'Focus' },
     side_lang_label: { zh:'Design Language', en:'Design Language', ja:'Design Language', ko:'Design Language', ar:'Design Language', de:'Design Language', fr:'Design Language' },
-    side_invest_label: { zh:'Investment', en:'Investment', ja:'Investment', ko:'Investment', ar:'Investment', de:'Investment', fr:'Investment' },
+    side_fitness_label: { zh:'Fitness', en:'Fitness', ja:'Fitness', ko:'Fitness', ar:'Fitness', de:'Fitness', fr:'Fitness' },
     footer_copy: { zh:'© 2026 陈文亮', en:'© 2026 Wenliang Chen', ja:'© 2026 陳文亮', ko:'© 2026 천원량', ar:'© 2026', de:'© 2026 Wenliang Chen', fr:'© 2026 Wenliang Chen' },
     footer_tag: { zh:'设计未来，投资未来。', en:'Design the future, invest in it.', ja:'未来をデザインし、未来に投資する。', ko:'미래를 디자인하고, 미래에 투자하다.', ar:'صمم المستقبل، استثمر فيه.', de:'Design die Zukunft, investiere in sie.', fr:"Design l'avenir, investis dedans." }
 };
@@ -77,7 +77,7 @@ function renderAbout() {
         '<div class="info-block"><div class="info-label">' + ft('side_edu_label') + '</div><div class="info-value">' + t(INFO, 'school') + '</div></div>' +
         '<div class="info-block"><div class="info-label">' + ft('side_focus_label') + '</div><div class="info-value">' + t(INFO, 'focus') + '</div></div>' +
         '<div class="info-block"><div class="info-label">' + ft('side_lang_label') + '</div><div class="info-value accent">' + t(INFO, 'design_lang') + '</div><div class="info-value" style="font-size:12px;color:var(--dim);">' + t(INFO, 'design_lang_sub') + '</div></div>' +
-        '<div class="info-block"><div class="info-label">' + ft('side_invest_label') + '</div><div class="info-value">' + t(INFO, 'invest_label') + '</div></div>';
+        '<div class="info-block"><div class="info-label">' + ft('side_fitness_label') + '</div><div class="info-value">' + t(INFO, 'fitness_label') + '</div></div>';
 }
 
 function renderWorks() {
@@ -137,12 +137,12 @@ function renderProjects() {
     container.innerHTML = html;
 }
 
-function renderInvest() {
+function renderFitness() {
     var narrative = document.getElementById('investNarrative');
-    narrative.innerHTML = '<p>' + t(INVEST, 'p1') + '</p><p>' + t(INVEST, 'p2') + '</p>';
+    narrative.innerHTML = '<p>' + t(FITNESS, 'p1') + '</p><p>' + t(FITNESS, 'p2') + '</p>';
     var tracksDiv = document.getElementById('investTracks');
     var html = '';
-    var tracks = (INVEST && INVEST.tracks) || [];
+    var tracks = (FITNESS && FITNESS.tracks) || [];
     for (var i = 0; i < tracks.length; i++) {
         var tr = tracks[i];
         html += '<div class="track-item"><div><h4>' + t(tr, 'title') + '</h4><div class="track-desc">' + t(tr, 'desc') + '</div></div>';
@@ -187,7 +187,7 @@ function applyLang(lang) {
         d.classList.toggle('active', d.getAttribute('data-lang') === lang);
     });
     document.getElementById('langDropdown').classList.remove('open');
-    renderHero(); renderAbout(); renderWorks(); renderProjects(); renderInvest(); renderContact(); renderFooter();
+    renderHero(); renderAbout(); renderWorks(); renderProjects(); renderFitness(); renderContact(); renderFooter();
 }
 
 document.getElementById('langBtn').addEventListener('click', function(e) {
@@ -356,104 +356,47 @@ applyLang = function(lang) {
     if (mobileLangSelect) mobileLangSelect.value = lang;
 };
 
-// ===== FULL-PAGE SNAP SCROLL NAVIGATION =====
+// ===== CLICK-BASED TAB NAVIGATION =====
 (function() {
-    var container = document.getElementById('snapContainer');
     var dots = document.querySelectorAll('.dot-item');
     var sections = document.querySelectorAll('.snap-section');
     var current = 0;
-    var isProgrammatic = false;
-    var spyTimer;
 
-    function findNearestIndex(scrollPos) {
-        var best = 0, bestDist = Infinity;
-        for (var i = 0; i < sections.length; i++) {
-            var d = Math.abs(sections[i].offsetTop - scrollPos);
-            if (d < bestDist) { bestDist = d; best = i; }
-        }
-        return best;
-    }
-
-    function scrollToSection(index) {
+    function activateSection(index) {
         if (index < 0 || index >= sections.length) return;
         current = index;
-        isProgrammatic = true;
-        clearTimeout(spyTimer);
-        container.scrollTop = sections[index].offsetTop;
-        updateDots();
-        updateInView();
-        setTimeout(function() { isProgrammatic = false; }, 600);
-    }
-
-    function updateDots() {
+        sections.forEach(function(s, i) {
+            s.classList.toggle('active', i === current);
+        });
         dots.forEach(function(d, i) {
             d.classList.toggle('active', i === current);
         });
     }
 
-    function updateInView() {
-        sections.forEach(function(s, i) {
-            s.classList.toggle('in-view', i === current);
-        });
-    }
-
     // Dot nav click
     dots.forEach(function(dot, i) {
-        dot.addEventListener('click', function() { scrollToSection(i); });
+        dot.addEventListener('click', function() { activateSection(i); });
     });
 
-    // Nav link override
+    // Nav link click
     document.querySelectorAll('nav a[href^="#"], .mobile-nav a[href^="#"]').forEach(function(a) {
         a.addEventListener('click', function(e) {
             e.preventDefault();
             var target = this.getAttribute('href').substring(1);
             sections.forEach(function(s, i) {
-                if (s.id === target || (target === 'hero' && i === 0)) scrollToSection(i);
+                if (s.id === target || (target === 'hero' && i === 0)) activateSection(i);
             });
         });
     });
 
-    // Wheel - instant response, no delay
-    container.addEventListener('wheel', function(e) {
-        e.preventDefault();
-        if (isProgrammatic) return;
-        if (e.deltaY > 0) scrollToSection(current + 1);
-        else scrollToSection(current - 1);
-    }, { passive: false });
-
-    // Touch
-    var touchStartY = 0;
-    container.addEventListener('touchstart', function(e) { touchStartY = e.touches[0].clientY; }, { passive: true });
-    container.addEventListener('touchend', function(e) {
-        var diff = touchStartY - e.changedTouches[0].clientY;
-        if (Math.abs(diff) > 50) {
-            if (diff > 0) scrollToSection(current + 1);
-            else scrollToSection(current - 1);
-        }
-    }, { passive: true });
-
-    // Keyboard
+    // Keyboard navigation
     document.addEventListener('keydown', function(e) {
-        if (e.key === 'ArrowDown' || e.key === 'PageDown') { e.preventDefault(); scrollToSection(current + 1); }
-        if (e.key === 'ArrowUp' || e.key === 'PageUp') { e.preventDefault(); scrollToSection(current - 1); }
-        if (e.key === 'Home') { e.preventDefault(); scrollToSection(0); }
-        if (e.key === 'End') { e.preventDefault(); scrollToSection(sections.length - 1); }
+        if (e.key === 'ArrowDown' || e.key === 'PageDown') { e.preventDefault(); activateSection(current + 1); }
+        if (e.key === 'ArrowUp' || e.key === 'PageUp') { e.preventDefault(); activateSection(current - 1); }
+        if (e.key === 'Home') { e.preventDefault(); activateSection(0); }
+        if (e.key === 'End') { e.preventDefault(); activateSection(sections.length - 1); }
     });
 
-    // Scroll spy - only for manual/user scrolling
-    container.addEventListener('scroll', function() {
-        if (isProgrammatic) return;
-        clearTimeout(spyTimer);
-        spyTimer = setTimeout(function() {
-            var idx = findNearestIndex(container.scrollTop);
-            if (idx !== current) {
-                current = idx;
-                updateDots();
-                updateInView();
-            }
-        }, 150);
-    });
-    // Init
-    updateDots();
-    updateInView();
+    // Init - show first section
+    activateSection(0);
 })();
