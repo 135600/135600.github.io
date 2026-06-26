@@ -397,8 +397,12 @@
             font-size: 28px; color: var(--accent); line-height: 1;
         }
         .proj-item .proj-marker .dot {
-            width: 6px; height: 6px; background: var(--accent);
-            border-radius: 50%; position: absolute; right: -23px; top: 8px;
+            position: absolute; right: -28px; top: 4px;
+            font-size: 20px; width: auto; height: auto;
+            background: none; border-radius: 0;
+        }
+        .proj-item .proj-marker .dot::before {
+            content: '🏋️';
         }
         .proj-item h3 {
             font-size: 22px; font-weight: 400;
