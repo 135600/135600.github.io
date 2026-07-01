@@ -162,14 +162,6 @@
             transition: color 0.3s;
         }
         .mobile-nav a:hover { color: var(--accent); }
-        .mobile-nav .mobile-lang-wrap { margin-top: 24px; }
-        .mobile-nav .mobile-lang-wrap select {
-            background: transparent; color: rgba(255,255,255,0.5);
-            border: 1px solid rgba(255,255,255,0.15);
-            padding: 8px 16px; font-size: 12px; letter-spacing: 2px;
-            font-family: inherit; appearance: none;
-            -webkit-appearance: none;
-        }
         nav a {
             color: rgba(255,255,255,0.5); text-decoration: none;
             font-size: 11px; letter-spacing: 2px;
@@ -597,6 +589,7 @@
 
 
 @media (max-width: 900px) {
+            html, body { overflow: hidden; }
             /* NAV */
             nav { padding: 14px 20px; }
             nav ul, nav .lang-wrap { display: none; }
@@ -607,7 +600,7 @@
             .cursor-dot { display: none; }
 
             /* HERO */
-            .hero { padding: 0 20px 50px; height: auto; min-height: 90vh; padding-top: 80px; }
+            .hero { padding: 0 20px 50px; height: 100vh; height: 100dvh; min-height: 100vh; padding-top: 80px; overflow-y: auto; }
             .hero-content { grid-template-columns: 1fr; gap: 28px; }
             .hero-left h1 { font-size: clamp(28px, 8vw, 48px); }
             .hero-left .tagline { font-size: 13px; margin-top: 16px; line-height: 1.9; }
@@ -619,8 +612,8 @@
             .dot-nav { display: flex !important; right: 12px !important; gap: 10px !important; }
             .dot-item { width: 20px; height: 20px; font-size: 14px; }
             .dot-label { display: none; }
-            .snap-container { overflow-y: auto; scroll-snap-type: none; -webkit-overflow-scrolling: touch; }
-            .snap-section { min-height: auto; scroll-snap-align: none; opacity: 1 !important; visibility: visible !important; }
+            .snap-container { overflow: hidden; }
+            .snap-section { min-height: 100vh; min-height: 100dvh; overflow-y: auto; -webkit-overflow-scrolling: touch; scroll-snap-align: none; align-items: flex-start; padding-top: 60px; }
             nav .lang-wrap { display: block !important; }
             .lang-btn { font-size: 11px; padding: 4px 8px; }
             .lang-dropdown { right: 0; left: auto; }
@@ -765,7 +758,7 @@
     display: inline-flex;
     flex-direction: column;
     align-items: center;
-    z-index: 100;
+    z-index: 1000;
     margin-left: 16px;
     margin-right: auto;
 }
@@ -813,7 +806,7 @@
     transform: translateX(-50%);
     width: 560px;
     height: 760px;
-    z-index: 5;
+    z-index: 1000;
     pointer-events: none;
     opacity: 0;
     transform-origin: top center;

@@ -366,7 +366,6 @@ function closeProjectDetail() {
 // ===== HAMBURGER MOBILE NAV =====
 var hamburger = document.getElementById('hamburger');
 var mobileNav = document.getElementById('mobileNav');
-var mobileLangSelect = document.getElementById('mobileLangSelect');
 
 hamburger.addEventListener('click', function() {
     hamburger.classList.toggle('active');
@@ -382,21 +381,6 @@ mobileNav.querySelectorAll('a').forEach(function(link) {
         document.body.style.overflow = '';
     });
 });
-
-// mobile language select
-if (mobileLangSelect) {
-    mobileLangSelect.value = currentLang;
-    mobileLangSelect.addEventListener('change', function() {
-        applyLang(this.value);
-    });
-}
-
-// sync mobile lang select when desktop dropdown changes
-var origApplyLang = applyLang;
-applyLang = function(lang) {
-    origApplyLang(lang);
-    if (mobileLangSelect) mobileLangSelect.value = lang;
-};
 
 // ===== CLICK-BASED TAB NAVIGATION =====
 
@@ -430,9 +414,15 @@ document.addEventListener('keydown', function(e) {
         dots.forEach(function(d, i) {
             d.classList.toggle('active', i === current);
         });
-        // Scroll to the active section smoothly
-        if (sections[current]) {
-            sections[current].scrollIntoView({ behavior: 'smooth', block: 'start' });
+        var isMobileView = window.matchMedia('(max-width: 900px)').matches;
+        if (isMobileView) {
+            // On mobile, reset internal scroll of the active section
+            if (sections[current]) sections[current].scrollTop = 0;
+        } else {
+            // On desktop, scroll container to active section
+            if (sections[current]) {
+                sections[current].scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
         }
     }
 
@@ -461,9 +451,9 @@ document.addEventListener('keydown', function(e) {
     });
 
 
-    // Touch swipe - disabled on mobile to allow free scrolling
+    // Touch swipe - disabled on mobile to allow free scrolling within sections
     // Only enable on larger screens where snap behavior is desired
-    var isMobile = window.matchMedia('(max-width: 768px)').matches;
+    var isMobile = window.matchMedia('(max-width: 900px)').matches;
     if (!isMobile) {
         var touchY = 0;
         document.getElementById('snapContainer').addEventListener('touchstart', function(e) {
