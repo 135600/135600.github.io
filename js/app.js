@@ -451,20 +451,28 @@ document.addEventListener('keydown', function(e) {
     });
 
 
-    // Touch swipe - disabled on mobile to allow free scrolling within sections
-    // Only enable on larger screens where snap behavior is desired
-    var isMobile = window.matchMedia('(max-width: 900px)').matches;
-    if (!isMobile) {
-        var touchY = 0;
-        document.getElementById('snapContainer').addEventListener('touchstart', function(e) {
+    // Touch swipe navigation
+    var touchY = 0;
+    var snapEl = document.getElementById('snapContainer');
+    snapEl.addEventListener('touchstart', function(e) {
+        touchY = e.touches[0].clientY;
+    }, { passive: true });
+    snapEl.addEventListener('touchmove', function(e) {
+        var activeSection = sections[current];
+        if (!activeSection) return;
+        var scrollTop = activeSection.scrollTop;
+        var scrollHeight = activeSection.scrollHeight;
+        var clientHeight = activeSection.clientHeight;
+        var dy = touchY - e.touches[0].clientY;
+        // Swipe up (next) at bottom, swipe down (prev) at top
+        if (dy > 50 && scrollTop + clientHeight >= scrollHeight - 2) {
+            activateSection(current + 1);
             touchY = e.touches[0].clientY;
-        }, { passive: true });
-        document.getElementById('snapContainer').addEventListener('touchend', function(e) {
-            var dy = touchY - e.changedTouches[0].clientY;
-            if (dy > 50) activateSection(current + 1);
-            else if (dy < -50) activateSection(current - 1);
-        }, { passive: true });
-    }
+        } else if (dy < -50 && scrollTop <= 2) {
+            activateSection(current - 1);
+            touchY = e.touches[0].clientY;
+        }
+    }, { passive: true });
 
     // Init - show first section
     activateSection(0);

@@ -600,7 +600,7 @@
             .cursor-dot { display: none; }
 
             /* HERO */
-            .hero { padding: 0 20px 50px; height: 100vh; height: 100dvh; min-height: 100vh; padding-top: 80px; overflow-y: auto; }
+            .hero { padding: 80px 20px 50px; height: 100vh; height: 100dvh; min-height: 100vh; overflow-y: auto; align-items: center; }
             .hero-content { grid-template-columns: 1fr; gap: 28px; }
             .hero-left h1 { font-size: clamp(28px, 8vw, 48px); }
             .hero-left .tagline { font-size: 13px; margin-top: 16px; line-height: 1.9; }
@@ -613,7 +613,7 @@
             .dot-item { width: 20px; height: 20px; font-size: 14px; }
             .dot-label { display: none; }
             .snap-container { overflow: hidden; }
-            .snap-section { min-height: 100vh; min-height: 100dvh; overflow-y: auto; -webkit-overflow-scrolling: touch; scroll-snap-align: none; align-items: flex-start; padding-top: 60px; }
+            .snap-section { min-height: 100vh; min-height: 100dvh; overflow-y: auto; -webkit-overflow-scrolling: touch; scroll-snap-align: none; }
             nav .lang-wrap { display: block !important; }
             .lang-btn { font-size: 11px; padding: 4px 8px; }
             .lang-dropdown { right: 0; left: auto; }
@@ -861,10 +861,14 @@
 /* Mobile responsive for pendant v10 */
 @media (max-width: 768px) {
     .pendant-3d-container {
-        width: 85vw !important;
-        height: calc(85vw * 1.35) !important;
+        position: fixed !important;
+        top: 60px !important;
         left: 50% !important;
         transform: translateX(-50%) !important;
+        width: 85vw !important;
+        height: calc(85vw * 1.35) !important;
+        max-height: 80vh !important;
+        z-index: 2147483647 !important;
     }
 }
 
