@@ -618,7 +618,7 @@
             .hero-scroll { display: none; }
             .dot-nav { display: none; }
             .snap-container { overflow-y: auto; scroll-snap-type: none; }
-            .snap-section { min-height: auto; scroll-snap-align: none; }
+            .snap-section { min-height: auto; scroll-snap-align: none; opacity: 1 !important; visibility: visible !important; }
 
             /* SECTION */
             .section { padding: 60px 20px; }

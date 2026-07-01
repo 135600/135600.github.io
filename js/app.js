@@ -130,7 +130,7 @@ function renderProjects() {
         html += '<h3>' + t(p, 'title') + '</h3>';
         html += '<p>' + t(p, 'desc') + '</p>';
         html += '<div class="proj-tags">';
-        var tags = (currentLang !== 'zh' && p.tags_en) ? p.tags_en : p.tags;
+        var tags = currentLang === 'zh' ? p.tags : (p['tags_' + currentLang] || p.tags_en || p.tags);
         if (tags) { for (var j = 0; j < tags.length; j++) { html += '<span>' + tags[j] + '</span>'; } }
         html += '</div></div>';
     }
@@ -461,16 +461,20 @@ document.addEventListener('keydown', function(e) {
     });
 
 
-    // Touch swipe
-    var touchY = 0;
-    document.getElementById('snapContainer').addEventListener('touchstart', function(e) {
-        touchY = e.touches[0].clientY;
-    }, { passive: true });
-    document.getElementById('snapContainer').addEventListener('touchend', function(e) {
-        var dy = touchY - e.changedTouches[0].clientY;
-        if (dy > 50) activateSection(current + 1);
-        else if (dy < -50) activateSection(current - 1);
-    }, { passive: true });
+    // Touch swipe - disabled on mobile to allow free scrolling
+    // Only enable on larger screens where snap behavior is desired
+    var isMobile = window.matchMedia('(max-width: 768px)').matches;
+    if (!isMobile) {
+        var touchY = 0;
+        document.getElementById('snapContainer').addEventListener('touchstart', function(e) {
+            touchY = e.touches[0].clientY;
+        }, { passive: true });
+        document.getElementById('snapContainer').addEventListener('touchend', function(e) {
+            var dy = touchY - e.changedTouches[0].clientY;
+            if (dy > 50) activateSection(current + 1);
+            else if (dy < -50) activateSection(current - 1);
+        }, { passive: true });
+    }
 
     // Init - show first section
     activateSection(0);
