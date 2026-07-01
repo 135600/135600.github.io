@@ -616,9 +616,14 @@
             .hero-bg-text { font-size: 50vw; }
             .hero-photo { width: 120px; height: 160px; margin-bottom: 0; }
             .hero-scroll { display: none; }
-            .dot-nav { display: none; }
-            .snap-container { overflow-y: auto; scroll-snap-type: none; }
+            .dot-nav { display: flex !important; right: 12px !important; gap: 10px !important; }
+            .dot-item { width: 20px; height: 20px; font-size: 14px; }
+            .dot-label { display: none; }
+            .snap-container { overflow-y: auto; scroll-snap-type: none; -webkit-overflow-scrolling: touch; }
             .snap-section { min-height: auto; scroll-snap-align: none; opacity: 1 !important; visibility: visible !important; }
+            .lang-wrap { display: block !important; }
+            .lang-btn { font-size: 11px; padding: 4px 8px; }
+            .lang-dropdown { right: 0; left: auto; }
 
             /* SECTION */
             .section { padding: 60px 20px; }
