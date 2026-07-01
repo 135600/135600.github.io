@@ -613,8 +613,9 @@
             .dot-item { width: 20px; height: 20px; font-size: 14px; }
             .dot-label { display: none; }
             .snap-container { overflow: hidden; }
-            .snap-section { display: block; min-height: 100vh; min-height: 100dvh; overflow-y: auto; -webkit-overflow-scrolling: touch; scroll-snap-align: none; }
+            .snap-section { display: flex; flex-direction: column; justify-content: center; min-height: 100vh; min-height: 100dvh; }
             .snap-section.active { opacity: 1; visibility: visible; }
+            .section-inner { flex: 1 1 auto; min-height: 0; overflow-y: auto; -webkit-overflow-scrolling: touch; padding: 0 20px !important; }
             nav .lang-wrap { display: block !important; }
             .lang-btn { font-size: 11px; padding: 4px 8px; }
             .lang-dropdown { right: 0; left: auto; }
