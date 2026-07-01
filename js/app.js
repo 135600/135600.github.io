@@ -451,28 +451,7 @@ document.addEventListener('keydown', function(e) {
     });
 
 
-    // Touch swipe navigation
-    var touchY = 0;
-    var snapEl = document.getElementById('snapContainer');
-    snapEl.addEventListener('touchstart', function(e) {
-        touchY = e.touches[0].clientY;
-    }, { passive: true });
-    snapEl.addEventListener('touchmove', function(e) {
-        var activeSection = sections[current];
-        if (!activeSection) return;
-        var scrollTop = activeSection.scrollTop;
-        var scrollHeight = activeSection.scrollHeight;
-        var clientHeight = activeSection.clientHeight;
-        var dy = touchY - e.touches[0].clientY;
-        // Swipe up (next) at bottom, swipe down (prev) at top
-        if (dy > 50 && scrollTop + clientHeight >= scrollHeight - 2) {
-            activateSection(current + 1);
-            touchY = e.touches[0].clientY;
-        } else if (dy < -50 && scrollTop <= 2) {
-            activateSection(current - 1);
-            touchY = e.touches[0].clientY;
-        }
-    }, { passive: true });
+    // Touch swipe navigation disabled - sections scroll internally, switching only via dot nav
 
     // Init - show first section
     activateSection(0);

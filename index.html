@@ -20,7 +20,7 @@
     <meta name="twitter:image" content="https://s.coze.cn/image/kggvlk1dtg8/">
     <meta name="description" content="Wenliang Chen — Automotive Designer & Investor Portfolio">
     <title>Wenliang Chen — Design × Investment</title>
-    <link rel="stylesheet" href="css/style.css?v=20260702b">
+    <link rel="stylesheet" href="css/style.css?v=20260702c">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 </head>
 <body>
@@ -29,14 +29,11 @@
 <!-- NAV -->
 <nav>
     <div class="logo">Wenliang Chen</div>
-        <div class="drop-badge" id="dropBadge">
-            <button class="pendant-btn" id="pendantBtn" aria-label="Name Card">
-                <span class="pendant-btn-char">陈</span>
-            </button>
-            <div class="pendant-3d-container" id="pendant3dContainer" style="display:none;">
-                <canvas id="pendant3dCanvas"></canvas>
-            </div>
-        </div>
+    <div class="drop-badge" id="dropBadge">
+        <button class="pendant-btn" id="pendantBtn" aria-label="Name Card">
+            <span class="pendant-btn-char">陈</span>
+        </button>
+    </div>
     <div class="nav-right">
         <ul>
             <li><a href="#about" data-i18n="nav_about">关于</a></li>
@@ -61,6 +58,11 @@
         </button>
     </div>
 </nav>
+
+<!-- PENDANT 3D (outside nav to escape mix-blend-mode stacking context) -->
+<div class="pendant-3d-container" id="pendant3dContainer" style="display:none;">
+    <canvas id="pendant3dCanvas"></canvas>
+</div>
 
 <!-- MOBILE NAV -->
 <div class="mobile-nav" id="mobileNav">
@@ -191,10 +193,10 @@
 </div>
 
 <!-- 数据文件 -->
-<script src="data.js?v=20260702b"></script>
-<script src="gallery_data.js?v=20260702b"></script>
-<script src="js/app.js?v=20260702b"></script>
-<script src="js/pendant3d.js?v=20260702b"></script>
+<script src="data.js?v=20260702c"></script>
+<script src="gallery_data.js?v=20260702c"></script>
+<script src="js/app.js?v=20260702c"></script>
+<script src="js/pendant3d.js?v=20260702c"></script>
 
 <!-- PROJECT DETAIL MODAL -->
 <div id="projectModal" class="project-modal">
