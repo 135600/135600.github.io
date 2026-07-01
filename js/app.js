@@ -125,7 +125,7 @@ function renderProjects() {
     var projects = PROJECTS || [];
     for (var i = 0; i < projects.length; i++) {
         var p = projects[i];
-        html += '<div class="proj-item">';
+        html += '<div class="proj-item" data-idx="' + i + '">';
         html += '<div class="proj-marker"><div class="y">' + p.year + '</div><div class="dot"></div></div>';
         html += '<h3>' + t(p, 'title') + '</h3>';
         html += '<p>' + t(p, 'desc') + '</p>';
@@ -321,6 +321,48 @@ document.getElementById('galleryScroll').addEventListener('click', function(e) {
 applyLang(currentLang);
 setTimeout(initReveal, 100);
 
+
+// ===== PROJECT DETAIL MODAL =====
+function openProjectDetail(projIdx) {
+    var proj = PROJECTS[projIdx];
+    if (!proj) return;
+    
+    var modal = document.getElementById('projectModal');
+    if (!modal) return;
+    
+    var titleEl = modal.querySelector('.pm-title');
+    var tagsEl = modal.querySelector('.pm-tags');
+    var descEl = modal.querySelector('.pm-desc');
+    var detailEl = modal.querySelector('.pm-detail');
+    
+    if (titleEl) titleEl.innerHTML = t(proj, 'title');
+    if (tagsEl) {
+        var tags = t(proj, 'tags');
+        tagsEl.innerHTML = Array.isArray(tags) ? tags.map(function(tag) { return '<span>' + tag + '</span>'; }).join('') : '';
+    }
+    if (descEl) descEl.textContent = t(proj, 'desc');
+    var detailText = t(proj, 'detail');
+    if (detailEl) {
+        if (detailText) {
+            detailEl.textContent = detailText;
+            detailEl.style.display = '';
+        } else {
+            detailEl.style.display = 'none';
+        }
+    }
+    
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeProjectDetail() {
+    var modal = document.getElementById('projectModal');
+    if (modal) {
+        modal.classList.remove('open');
+        document.body.style.overflow = '';
+    }
+}
+
 // ===== HAMBURGER MOBILE NAV =====
 var hamburger = document.getElementById('hamburger');
 var mobileNav = document.getElementById('mobileNav');
@@ -357,6 +399,23 @@ applyLang = function(lang) {
 };
 
 // ===== CLICK-BASED TAB NAVIGATION =====
+
+// Project item click delegation
+document.addEventListener('click', function(e) {
+    var projItem = e.target.closest('.proj-item');
+    if (projItem && projItem.dataset.idx) {
+        openProjectDetail(parseInt(projItem.dataset.idx));
+    }
+});
+
+
+// ESC to close project modal
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        closeProjectDetail();
+    }
+});
+
 (function() {
     var dots = document.querySelectorAll('.dot-item');
     var sections = document.querySelectorAll('.snap-section');
@@ -371,6 +430,10 @@ applyLang = function(lang) {
         dots.forEach(function(d, i) {
             d.classList.toggle('active', i === current);
         });
+        // Scroll to the active section smoothly
+        if (sections[current]) {
+            sections[current].scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
     }
 
     // Dot nav click
@@ -397,6 +460,25 @@ applyLang = function(lang) {
         if (e.key === 'End') { e.preventDefault(); activateSection(sections.length - 1); }
     });
 
+
+    // Touch swipe
+    var touchY = 0;
+    document.getElementById('snapContainer').addEventListener('touchstart', function(e) {
+        touchY = e.touches[0].clientY;
+    }, { passive: true });
+    document.getElementById('snapContainer').addEventListener('touchend', function(e) {
+        var dy = touchY - e.changedTouches[0].clientY;
+        if (dy > 50) activateSection(current + 1);
+        else if (dy < -50) activateSection(current - 1);
+    }, { passive: true });
+
     // Init - show first section
     activateSection(0);
+
+
+
 })();
+
+
+// Pendant toggle moved to pendant3d.js
+
