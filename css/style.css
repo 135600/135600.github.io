@@ -621,7 +621,7 @@
             .dot-label { display: none; }
             .snap-container { overflow-y: auto; scroll-snap-type: none; -webkit-overflow-scrolling: touch; }
             .snap-section { min-height: auto; scroll-snap-align: none; opacity: 1 !important; visibility: visible !important; }
-            .lang-wrap { display: block !important; }
+            nav .lang-wrap { display: block !important; }
             .lang-btn { font-size: 11px; padding: 4px 8px; }
             .lang-dropdown { right: 0; left: auto; }
 
