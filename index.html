@@ -20,9 +20,28 @@
     <meta name="twitter:image" content="https://s.coze.cn/image/kggvlk1dtg8/">
     <meta name="description" content="Wenliang Chen — Automotive Designer & Investor Portfolio">
     <title>Wenliang Chen — Design × Investment</title>
-    <link rel="stylesheet" href="css/style.css?v=20260702i">
+    <link rel="stylesheet" href="css/style.css?v=20260702k">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-</head><style>@media(max-width:768px){html,body{overflow:hidden!important;height:100%!important}.snap-container{overflow:visible!important;height:auto!important}.snap-section{display:none!important;min-height:auto!important;overflow-y:visible!important}.snap-section.active{display:block!important;overflow-y:auto!important;-webkit-overflow-scrolling:touch!important;touch-action:pan-y!important;height:100vh!important;height:100dvh!important}.hero.snap-section.active{display:flex!important;flex-direction:column!important;justify-content:center!important;align-items:center!important;height:100vh!important;height:100dvh!important}}</style>
+<style>
+/* Complete mobile fix - overrides all conflicting rules from style.css */
+@media(max-width:768px){
+  /* Lock page scroll, only sections scroll internally */
+  html,body{overflow:hidden!important;height:100%!important;width:100%!important}
+  
+  /* Container flows naturally */
+  .snap-container{overflow:visible!important;height:auto!important}
+  
+  /* Hidden sections: fully hidden, no scroll */
+  .snap-section.active~.snap-section,.snap-section:not(.active){display:none!important;min-height:0!important;overflow:hidden!important}
+  
+  /* Active section: visible and scrollable - MUST be last to win cascade */
+  .snap-section.active{display:block!important;overflow-y:auto!important;-webkit-overflow-scrolling:touch!important;touch-action:pan-y!important;height:100vh!important;height:100dvh!important;min-height:100vh!important;min-height:100dvh!important}
+  
+  /* Hero: flex centering */
+  .hero.snap-section.active{display:flex!important;flex-direction:column!important;justify-content:center!important;align-items:center!important}
+}
+</style>
+</head>
 <body>
 <div class="cursor-dot" id="cursor"></div>
 
