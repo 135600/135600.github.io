@@ -612,12 +612,11 @@
             .dot-nav { display: flex !important; right: 12px !important; gap: 10px !important; }
             .dot-item { width: 20px; height: 20px; font-size: 14px; }
             .dot-label { display: none; }
-            .snap-container { overflow: hidden; }
-            .snap-section { display: block; min-height: 100vh; min-height: 100dvh; overflow-y: auto; -webkit-overflow-scrolling: touch; scroll-snap-align: none; }
-            .snap-section.active { opacity: 1; visibility: visible; }
+            .snap-container { overflow: visible; height: auto; }
+            .snap-section { display: none !important; min-height: auto; overflow-y: visible; }
+            .snap-section.active { display: block !important; overflow-y: auto; -webkit-overflow-scrolling: touch; min-height: 100vh; min-height: 100dvh; }
             /* Hero centering on mobile */
-            .hero .section-inner { display: flex !important; flex-direction: column !important; justify-content: center !important; align-items: center !important; min-height: 100vh !important; min-height: 100dvh !important; max-height: none !important; overflow-y: visible !important; }
-            .section-inner { max-height: 100vh; max-height: 100dvh; overflow-y: auto; -webkit-overflow-scrolling: touch; }
+            .hero.snap-section.active { display: flex !important; flex-direction: column; justify-content: center; align-items: center; min-height: 100vh; min-height: 100dvh; }
             nav .lang-wrap { display: block !important; }
             .lang-btn { font-size: 11px; padding: 4px 8px; }
             .lang-dropdown { right: 0; left: auto; }
